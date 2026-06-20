@@ -17,3 +17,6 @@ Thumbs.db
 ehthumbs.db
 Desktop.ini
 $RECYCLE.BIN/
+
+# Private credentials
+credentials.php

@@ -24,4 +24,12 @@ try {
 } catch (\PDOException $e) {
     throw new \PDOException($e->getMessage(), (int)$e->getCode());
 }
+// تحميل الإعدادات الحساسة من ملف credentials.php إذا كان موجوداً
+if (file_exists(__DIR__ . '/credentials.php')) {
+    include __DIR__ . '/credentials.php';
+} else {
+    define('GOOGLE_CLIENT_ID', '');
+    define('GOOGLE_CLIENT_SECRET', '');
+    define('GOOGLE_REDIRECT_URI', 'http://localhost:8000/google_callback.php');
+}
 ?>
